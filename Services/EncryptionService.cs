@@ -50,7 +50,9 @@ namespace ATBM_PRO.Services
             BigInteger[] encryptedMask = new BigInteger[numBlocks];
             for (int i = 0; i < numBlocks; i++)
             {
-                byte[] block = new byte[BlockSize];
+                
+                byte[] block = new byte[BlockSize + 1];  // Tăng thêm 1 byte để tránh số âm
+                block[0] = 0;
                 Array.Copy(encryptedMaskBytes, i * BlockSize, block, 0, BlockSize);
                 encryptedMask[i] = new BigInteger(block);
             }

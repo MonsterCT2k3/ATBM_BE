@@ -90,6 +90,8 @@ namespace ATBM_PRO.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Lỗi: {ex.Message}");
+                Console.WriteLine($"StackTrace: {ex.StackTrace}");
                 return StatusCode(500, $"Lỗi: {ex.Message}");
             }
         }

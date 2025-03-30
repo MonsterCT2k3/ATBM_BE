@@ -3,17 +3,5 @@
    "ConnectionStrings": {
    "DefaultConnection": "server=localhost;database=atbm_db;user=root;password=password của bạn"
    },
-3. chạy dòng : "dotnet ef database update"
-4. test api: register:
-   bên fe gọi api :
-   response = requests.get("http://localhost:5000/api/get-public-key")
-   key_data = response.json()
-
-N = int(key_data["N"])
-E = int(key_data["E"])
-lấy khóa public
-sau đó gọi api register :
-response = requests.post("http://localhost:5000/api/register", json={
-"Data": [encrypted_data],
-"N": str(N)
-})
+3. dotnet tool install --global dotnet-ef
+4. chạy dòng : "dotnet ef database update"
