@@ -111,3 +111,6 @@ E:\My_Project\C#\ATBM_PRO\obj\Debug\net8.0\ATBM_PRO.genruntimeconfig.cache
 E:\My_Project\C#\ATBM_PRO\obj\Debug\net8.0\ref\ATBM_PRO.dll
 E:\My_Project\C#\ATBM_PRO\bin\Debug\net8.0\BCrypt.Net-Next.dll
 E:\My_Project\C#\ATBM_PRO\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\My_Project\C#\ATBM_PRO\bin\Debug\net8.0\DotNetEnv.dll
+E:\My_Project\C#\ATBM_PRO\bin\Debug\net8.0\Sprache.dll
+E:\My_Project\C#\ATBM_PRO\obj\Debug\net8.0\ATBM_PRO.sourcelink.json

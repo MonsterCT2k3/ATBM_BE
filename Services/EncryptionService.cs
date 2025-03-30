@@ -7,12 +7,12 @@ namespace ATBM_PRO.Services
 {
     public class EncryptionService
     {
-        private readonly CustomRSA _rsa;
-        private readonly (BigInteger n, BigInteger e) _publicKey;
-        private readonly (BigInteger n, BigInteger d) _privateKey;
+        private static readonly CustomRSA _rsa;
+        private static readonly (BigInteger n, BigInteger e) _publicKey;
+        private static readonly(BigInteger n, BigInteger d) _privateKey;
         private const int BlockSize = 8;
 
-        public EncryptionService()
+        static EncryptionService()
         {
             _rsa = new CustomRSA(64);
             _publicKey = _rsa.GetPublicKey();
@@ -51,8 +51,7 @@ namespace ATBM_PRO.Services
             for (int i = 0; i < numBlocks; i++)
             {
                 
-                byte[] block = new byte[BlockSize + 1];  // Tăng thêm 1 byte để tránh số âm
-                block[0] = 0;
+                byte[] block = new byte[BlockSize];  
                 Array.Copy(encryptedMaskBytes, i * BlockSize, block, 0, BlockSize);
                 encryptedMask[i] = new BigInteger(block);
             }
