@@ -56,21 +56,17 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 581,
+          "DockedWidth": 371,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         },
         {
-          "DockedWidth": 227,
+          "DockedWidth": 437,
           "SelectedChildIndex": 4,
           "Children": [
             {
@@ -95,8 +91,7 @@
               "RelativeToolTip": "Models\\Response.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T06:08:19.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T06:08:19.602Z"
             },
             {
               "$type": "Document",
@@ -106,7 +101,7 @@
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "D:\\Documents\\Workspace\\C#\\ATBMBE\\ATBM_PRO\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T17:41:28.742Z",
               "EditorCaption": ""
@@ -121,8 +116,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAIsAAAAAAAAAAAAAAHQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T17:41:28.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T17:41:28.747Z"
             },
             {
               "$type": "Document",
@@ -134,8 +128,7 @@
               "RelativeToolTip": "Services\\EncryptionService.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAowDYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T17:41:28.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T17:41:28.707Z"
             },
             {
               "$type": "Document",
@@ -147,8 +140,7 @@
               "RelativeToolTip": "Services\\aesService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T01:29:08.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T01:29:08.786Z"
             },
             {
               "$type": "Document",
@@ -160,8 +152,7 @@
               "RelativeToolTip": "Utils\\CustomRSA.cs",
               "ViewState": "AgIAAIMAAAAAAAAAAADwv6EAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T17:41:28.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T17:41:28.736Z"
             },
             {
               "$type": "Document",
@@ -173,8 +164,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-30T17:41:56.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T17:41:56.546Z"
             },
             {
               "$type": "Document",
@@ -186,8 +176,7 @@
               "RelativeToolTip": "Models\\Request.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T17:41:28.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T17:41:28.751Z"
             },
             {
               "$type": "Document",
