@@ -2,6 +2,7 @@
 
 namespace ATBM_PRO.Models
 {
+
     public class User
     {
         [Key]
@@ -55,5 +56,9 @@ namespace ATBM_PRO.Models
 
         [MaxLength(20)]
         public string SoTKNganHang { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(10)]
+        public string Role { get; set; } = "User";
     }
 }

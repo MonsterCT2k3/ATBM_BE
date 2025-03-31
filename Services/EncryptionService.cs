@@ -23,6 +23,7 @@ namespace ATBM_PRO.Services
 
         public string EncryptResponse(string originalData, BigInteger nFE, BigInteger eFE)
         {
+            const int blockSize = 8;
             byte[] dataBytes = Encoding.UTF8.GetBytes(originalData);
             byte[] mask = new byte[dataBytes.Length];
             Random.Shared.NextBytes(mask);
@@ -32,7 +33,19 @@ namespace ATBM_PRO.Services
                 maskedData[i] = (byte)(dataBytes[i] ^ mask[i]);
 
             BigInteger[] encryptedMask = _rsa.Encrypt(mask, nFE, eFE);
-            byte[] encryptedMaskBytes = encryptedMask.SelectMany(x => x.ToByteArray()).ToArray();
+            byte[] encryptedMaskBytes = new byte[encryptedMask.Length * blockSize];
+            for (int i = 0; i < encryptedMask.Length; i++)
+            {
+                byte[] bytes = encryptedMask[i].ToByteArray();
+                if (bytes.Length > blockSize)
+                {
+                    Array.Copy(bytes, 0, encryptedMaskBytes, i * blockSize, blockSize);
+                }
+                else
+                {
+                    Array.Copy(bytes, 0, encryptedMaskBytes, i * blockSize, bytes.Length);
+                }
+            }
 
             return JsonSerializer.Serialize(new
             {

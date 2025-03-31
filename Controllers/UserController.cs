@@ -9,6 +9,7 @@ using ATBM_PRO.Services;
 using System.Threading.Tasks;
 using BE_Project.Models;
 using Microsoft.AspNetCore.Identity.Data;
+using System.Text.Encodings.Web;
 
 namespace ATBM_PRO.Controllers
 {
@@ -50,11 +51,39 @@ namespace ATBM_PRO.Controllers
                 if (!BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
                     return Unauthorized("Email hoặc mật khẩu không đúng.");
 
-                // 🔒 Mã hóa dữ liệu trả về
                 var (nFE, eFE) = (BigInteger.Parse(request.PublicKeyFE.n), BigInteger.Parse(request.PublicKeyFE.e));
-                var response = new { Message = "Đăng nhập thành công", UserId = user.Id };
 
-                return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(response), nFE, eFE));
+                // Tạo đối tượng user không chứa password
+                var userResponse = new
+                {
+                    user.Id,
+                    user.Username,
+                    user.HoTen,
+                    user.NgaySinh,
+                    user.GioiTinh,
+                    user.SoCCCD,
+                    user.Sdt,
+                    user.Email,
+                    user.DiaChiThuongTru,
+                    user.DiaChiTamTru,
+                    user.NgheNghiep,
+                    user.HonNhan,
+                    user.BangLaiXe,
+                    user.SoTKNganHang,
+                    user.Role
+                };
+
+                var response = new { 
+                    Message = "Đăng nhập thành công",
+                    User = userResponse
+                };
+
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
+
+                return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(response, options), nFE, eFE));
             }
             catch (Exception ex)
             {
@@ -85,8 +114,12 @@ namespace ATBM_PRO.Controllers
 
                 var (nFE, eFE) = (BigInteger.Parse(request.PublicKeyFE.n), BigInteger.Parse(request.PublicKeyFE.e));
 
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
                 // 🔒 Mã hóa dữ liệu trả về
-                return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(user), nFE, eFE));
+                return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(user, options), nFE, eFE));
             }
             catch (Exception ex)
             {
@@ -128,8 +161,13 @@ namespace ATBM_PRO.Controllers
             var user = await _context.Users.FindAsync(id);
             if (user == null) return NotFound();
 
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            };
+
             // 🔒 Mã hóa phản hồi
-            return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(user), BigInteger.Parse(n), BigInteger.Parse(e)));
+            return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(user, options), BigInteger.Parse(n), BigInteger.Parse(e)));
         }
 
         // 📌 API Cập nhật User (Giải mã request)

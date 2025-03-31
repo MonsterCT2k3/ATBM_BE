@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "byjhRG+6mk/ra2DADtTkcsC/C2ZfCOZjKRf1RhP6kJk=",
+  "Hash": "HGg3xdeARS19L12Lkzoj3BOFB00CmllSejesYKXSMzs=",
   "Source": "ATBM_PRO",
   "BasePath": "_content/ATBM_PRO",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
