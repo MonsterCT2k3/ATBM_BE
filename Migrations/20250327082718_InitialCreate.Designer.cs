@@ -100,7 +100,10 @@ namespace ATBM_PRO.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
-
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
                     b.HasKey("Id");
 
                     b.ToTable("Users");

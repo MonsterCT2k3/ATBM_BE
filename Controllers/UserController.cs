@@ -183,7 +183,14 @@ namespace ATBM_PRO.Controllers
 
                 _context.Entry(user).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-                return NoContent();
+                var (nFE, eFE) = (BigInteger.Parse(request.PublicKeyFE.n), BigInteger.Parse(request.PublicKeyFE.e));
+
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
+                // 🔒 Mã hóa dữ liệu trả về
+                return Ok(_encryptionService.EncryptResponse(JsonSerializer.Serialize(user, options), nFE, eFE));
             }
             catch (Exception ex)
             {

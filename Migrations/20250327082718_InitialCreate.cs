@@ -47,7 +47,8 @@ namespace ATBM_PRO.Migrations
                     BangLaiXe = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     SoTKNganHang = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Role = table.Column<string>(type: "varchar(10)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
